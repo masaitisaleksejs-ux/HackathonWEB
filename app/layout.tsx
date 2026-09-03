@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hackathons-48h.aleksejsm.chatgpt.site"),
+  metadataBase: new URL(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://hackathonweb-ten.vercel.app"),
   title: "48h — Hackathons for Real Business Challenges",
   description: "24h and 48h hackathons where student teams turn real company challenges into fresh concepts, prototypes and pitches.",
   openGraph: {
