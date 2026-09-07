@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 type Language = "en" | "lv";
 
+const bookingUrl = "https://cal.com/aleksejs-masaitis";
+
 const copy = {
   en: {
     nav: ["How it works", "Formats", "What you get", "About"],
@@ -74,7 +76,7 @@ const copy = {
     bookEyebrow: "Your challenge goes here",
     bookTitle: "Bring us the problem everyone keeps postponing.",
     bookText: "In one short call, we’ll understand the challenge, recommend 24h or 48h and outline what the experience could look like.",
-    calendarNote: "Booking calendar will be connected here.",
+    calendarNote: "Choose a time in Cal.com. Your confirmation will include a Google Meet link.",
     footerLine: "Fresh minds. Real challenges. Tangible results.",
   },
   lv: {
@@ -146,7 +148,7 @@ const copy = {
     bookEyebrow: "Vieta jūsu izaicinājumam",
     bookTitle: "Atnesiet mums problēmu, kuru visi turpina atlikt.",
     bookText: "Vienā īsā sarunā sapratīsim izaicinājumu, ieteiksim 24h vai 48h formātu un ieskicēsim iespējamo pieredzi.",
-    calendarNote: "Šeit tiks pievienots sarunas rezervācijas kalendārs.",
+    calendarNote: "Izvēlieties laiku Cal.com. Apstiprinājumā saņemsiet Google Meet saiti.",
     footerLine: "Svaigi prāti. Īsti izaicinājumi. Taustāmi rezultāti.",
   },
 } as const;
@@ -187,7 +189,7 @@ export default function Home() {
             <button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
             <button className={language === "lv" ? "active" : ""} onClick={() => setLanguage("lv")} aria-pressed={language === "lv"}>LV</button>
           </div>
-          <a className="button button-small" href="#book">{t.book} <span aria-hidden="true">↗</span></a>
+          <a className="button button-small" href={bookingUrl} target="_blank" rel="noreferrer">{t.book} <span aria-hidden="true">↗</span></a>
         </div>
       </header>
 
@@ -197,7 +199,7 @@ export default function Home() {
           <h1>{t.hero}</h1>
           <p className="lead">{t.intro}</p>
           <div className="hero-actions">
-            <a className="button" href="#book">{t.book} <span aria-hidden="true">↗</span></a>
+            <a className="button" href={bookingUrl} target="_blank" rel="noreferrer">{t.book} <span aria-hidden="true">↗</span></a>
             <a className="text-link" href="#formats">{t.explore} <span aria-hidden="true">↓</span></a>
           </div>
           <div className="proof-chip"><strong>50+</strong><span>{language === "en" ? "hackathons organised by our team" : "mūsu komandas organizēti hakatoni"}</span></div>
@@ -340,7 +342,7 @@ export default function Home() {
           </div>
           <div className="book-copy">
             <p>{t.bookText}</p>
-            <button className="button booking-placeholder" type="button" disabled>{t.book} <span aria-hidden="true">↗</span></button>
+            <a className="button booking-link" href={bookingUrl} target="_blank" rel="noreferrer">{t.book} <span aria-hidden="true">↗</span></a>
             <small>{t.calendarNote}</small>
           </div>
         </div>
