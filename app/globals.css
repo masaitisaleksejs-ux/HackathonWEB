@@ -162,7 +162,7 @@ h1 { max-width:760px; margin:0; font-size:clamp(52px,6.2vw,96px); line-height:.9
 .book-layout h2 { max-width:900px; margin:0; font-size:clamp(62px,8.5vw,132px); line-height:.84; letter-spacing:-.075em; }
 .book-copy { padding-bottom:14px; }
 .book-copy p { margin:0 0 30px; font-size:18px; line-height:1.65; }
-.booking-placeholder { background:var(--ink); cursor:not-allowed; opacity:1; }
+.booking-link { background:var(--ink); }
 .book-copy small { display:block; margin-top:13px; font-size:10px; font-weight:800; letter-spacing:.08em; opacity:.75; }
 .book-sticker { position:absolute; right:-25px; bottom:22px; padding:18px 34px; background:var(--yellow); color:var(--ink); border:3px solid var(--ink); box-shadow:8px 8px 0 var(--ink); transform:rotate(-7deg); font-family:ui-monospace,monospace; font-size:28px; font-weight:900; }
 .site-footer { min-height:220px; padding:42px 4vw; display:grid; grid-template-columns:1fr 1fr 1fr; align-items:end; gap:30px; background:var(--ink); color:white; }
