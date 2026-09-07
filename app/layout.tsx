@@ -2,24 +2,42 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://hackathonweb-ten.vercel.app"),
-  title: "48h — Hackathons for Real Business Challenges",
-  description: "24h and 48h hackathons where student teams turn real company challenges into fresh concepts, prototypes and pitches.",
-  openGraph: {
-    title: "48h — Hackathons for Real Business Challenges",
-    description: "One challenge. Dozens of fresh ideas. 24 or 48 hours.",
-    type: "website",
-    images: [{ url: "/og.png", width: 1731, height: 909, alt: "48h — Hackathons for real business challenges" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "48h — Hackathons for Real Business Challenges",
-    description: "One challenge. Dozens of fresh ideas. 24 or 48 hours.",
-    images: ["/og.png"],
-  },
+  metadataBase: new URL("https://hackathons-48h.aleksejsm.chatgpt.site"),
+  applicationName: "48h",
+  title: "48h — Corporate Hackathons in Latvia",
+  description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "48h",
+  url: "https://hackathons-48h.aleksejsm.chatgpt.site",
+  description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
+  founder: [
+    { "@type": "Person", name: "Aleksejs Masaitis" },
+    { "@type": "Person", name: "Ralfs Roga" },
+  ],
+  areaServed: { "@type": "Country", name: "Latvia" },
+  knowsAbout: [
+    "Corporate hackathons",
+    "Innovation sprints",
+    "Student innovation",
+    "Business challenge solving",
+  ],
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="en">
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
+      </body>
+    </html>
+  );
 }
