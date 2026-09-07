@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hackathons-48h.aleksejsm.chatgpt.site"),
+  metadataBase: new URL("https://48h.lv"),
   applicationName: "48h",
   title: "48h — Corporate Hackathons in Latvia",
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
@@ -13,7 +13,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "48h",
-  url: "https://hackathons-48h.aleksejsm.chatgpt.site",
+  url: "https://48h.lv",
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
   founder: [
     { "@type": "Person", name: "Aleksejs Masaitis" },

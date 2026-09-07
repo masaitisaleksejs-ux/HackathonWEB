@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://hackathons-48h.aleksejsm.chatgpt.site";
+const siteUrl = "https://48h.lv";
 
 export default function robots(): MetadataRoute.Robots {
   return {
