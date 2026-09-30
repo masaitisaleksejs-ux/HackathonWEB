@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LandingPage from "../landing-page";
+import LandingPage from "./landing-page";
 
 const title = "Corporate Hackathons in Latvia | 24h & 48h | 48h";
 const description = "We organise 24h and 48h corporate hackathons in Latvia, where student teams turn real business challenges into concepts, prototypes and pitches.";

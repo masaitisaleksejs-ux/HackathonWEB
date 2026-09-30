@@ -193,3 +193,49 @@ h1 { max-width:760px; margin:0; font-size:clamp(52px,6.2vw,96px); line-height:.9
   .site-footer{grid-template-columns:1fr;align-items:start}.footer-links{justify-content:flex-start}
 }
 @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.ticker div{animation:none}*{transition-duration:.01ms!important} }
+
+/* Service pages extend the existing 48h brand with readable, server-rendered content. */
+a:focus-visible,summary:focus-visible { outline:3px solid var(--blue);outline-offset:5px; }
+.format-details { display:inline-block;align-self:flex-start;margin-top:24px;border-bottom:1px solid currentColor;padding-bottom:4px;font-size:14px;font-weight:800; }
+.service-link { margin:32px 0 0;line-height:1.6; }
+.about-details { display:inline-block;margin-top:28px;border-bottom:1px solid currentColor;padding-bottom:5px;font-size:16px;font-weight:800; }
+.footer-links { flex-wrap:wrap;font-family:inherit;font-size:14px;line-height:1.5; }
+.skip-link { position:absolute;top:-80px;left:20px;background:var(--ink);color:white;padding:14px;z-index:100; }
+.skip-link:focus { top:10px; }
+.detail-hero { display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.65fr);gap:8vw;padding:70px 0 80px;align-items:center; }
+.breadcrumb { margin:0 0 48px;color:#5d5952;font-size:14px;line-height:1.5; }
+.breadcrumb a { text-decoration:underline;text-underline-offset:4px; }
+.detail-hero h1 { font-size:clamp(44px,5.2vw,78px);line-height:1.05;letter-spacing:-.045em; }
+.detail-hero .eyebrow,.detail-contents .eyebrow,.detail-related .eyebrow { font-size:13px; }
+.detail-mark { padding:52px 28px;background:var(--blue);color:white;border-radius:32px;transform:rotate(2deg);text-align:center; }
+.detail-mark strong { display:block;color:var(--yellow);font-family:ui-monospace,monospace;font-size:clamp(42px,5vw,72px);letter-spacing:-.07em;line-height:1.1; }
+.detail-mark p { margin:24px 0;font-size:18px;font-weight:800; }
+.detail-mark span { display:block;border-top:1px solid #ffffff66;padding-top:24px;font-size:14px;line-height:1.6; }
+.detail-sprint .detail-mark { background:var(--orange);color:var(--ink); }
+.detail-corporate .detail-mark strong { font-size:clamp(32px,3.8vw,58px); }
+.detail-sprint .detail-mark strong { color:var(--ink); }
+.detail-about .detail-mark { background:var(--ink); }
+.detail-body { display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:8vw;padding:0 0 80px; }
+.detail-contents { position:sticky;top:120px;align-self:start;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:22px; }
+.detail-contents ol { margin:0;padding-left:20px;display:grid;gap:18px;font-size:16px;line-height:1.5; }
+.detail-contents a:hover { text-decoration:underline;text-underline-offset:4px; }
+.detail-section { position:relative;padding:38px 0;border-top:1px solid var(--line);scroll-margin-top:110px; }
+.detail-section h2,.detail-questions h2 { margin:0 0 22px;font-size:clamp(28px,3vw,42px);letter-spacing:-.035em;line-height:1.15; }
+.detail-section p,.detail-section li { color:#52504b;font-size:18px;line-height:1.75; }
+.detail-section p { margin:0; }
+.detail-section ul { display:grid;gap:12px;margin:24px 0 0;padding-left:22px; }
+.detail-index { display:block;margin-bottom:16px;color:var(--blue);font-family:ui-monospace,monospace;font-size:14px;font-weight:800; }
+.detail-questions { padding:38px 0 0; }
+.detail-questions .faq-list p { font-size:16px;line-height:1.75; }
+.detail-related { padding:0 0 80px; }
+.detail-links { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px; }
+.detail-links a { display:grid;align-content:start;gap:18px;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:24px; }
+.detail-links a:hover { border-color:var(--blue); }
+.detail-links strong { font-size:22px;line-height:1.2; }
+.detail-links span { color:#59564f;font-size:16px;line-height:1.65; }
+.detail-cta { padding:72px 0;background:var(--yellow); }
+.detail-cta h2 { margin:0;font-size:clamp(36px,5vw,66px);line-height:1.05;letter-spacing:-.04em; }
+.detail-cta p { max-width:680px;margin:24px 0;font-size:18px;line-height:1.7; }
+.detail-page .site-header nav,.detail-page .language-switch a,.detail-page .button-small { font-size:14px; }
+@media (max-width:980px) { .detail-hero{grid-template-columns:1fr}.detail-mark{max-width:460px;transform:none}.detail-body{grid-template-columns:1fr;gap:36px}.detail-contents{position:static}.detail-links{grid-template-columns:1fr}.detail-hero{padding:48px 0 60px}.breadcrumb{margin-bottom:30px} }
+@media (max-width:620px) { .detail-hero h1{font-size:42px}.detail-section p,.detail-section li{font-size:16px}.detail-page .button-small{padding-inline:10px;font-size:12px}.detail-page .site-header{gap:8px}.detail-mark{padding:32px 22px}.detail-body,.detail-related{padding-bottom:56px}.detail-cta{padding:56px 0} }

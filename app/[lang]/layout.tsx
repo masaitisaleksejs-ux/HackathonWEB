@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { isLanguage } from "../site-content";
+import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://48h.lv"),
@@ -7,13 +9,16 @@ export const metadata: Metadata = {
   title: "48h — Corporate Hackathons in Latvia",
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  verification: { google: "GE4X-cduyrZArrU2Npi1tK_uXp_zUmymd3CHiUg9xLM" },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://48h.lv/#organization",
   name: "48h",
   url: "https://48h.lv",
+  logo: "https://48h.lv/favicon.svg",
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
   founder: [
     { "@type": "Person", name: "Aleksejs Masaitis" },
@@ -28,9 +33,11 @@ const organizationSchema = {
   ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children, params }: Readonly<{ children: React.ReactNode; params: Promise<{ lang: string }> }>) {
+  const { lang } = await params;
+  if (!isLanguage(lang)) notFound();
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body>
         <script
           type="application/ld+json"

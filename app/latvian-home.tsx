@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LandingPage from "../landing-page";
+import LandingPage from "./landing-page";
 
 const title = "Hakatonu organizēšana uzņēmumiem Latvijā | 48h";
 const description = "Organizējam 24h un 48h hakatonus uzņēmumiem Latvijā. Studentu komandas pārvērš reālus biznesa izaicinājumus konceptos, prototipos un risinājumos.";

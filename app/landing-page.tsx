@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { pagePath, pages } from "./site-content";
 
 type Language = "en" | "lv";
 
@@ -205,7 +206,7 @@ export default function LandingPage({ language }: { language: Language }) {
         </div>
 
         <div className="hero-stage" aria-label="48 hour hackathon countdown">
-          <img className="hero-art" src="/48h-hero.webp" alt={t.objectsAlt} />
+          <img className="hero-art" src="/48h-hero.webp" alt={t.objectsAlt} width={1536} height={1024} fetchPriority="high" />
           <div className="timer-card timer-overlay">
             <div className="timer-topline"><span><i />{t.live}</span><span>48h / 01</span></div>
             <div className="timer" aria-hidden="true">
@@ -225,13 +226,14 @@ export default function LandingPage({ language }: { language: Language }) {
         <div className="format-grid">
           <article className="format-card sprint-card">
             <div className="format-number">24<span>h</span></div>
-            <div className="format-content"><div className="format-label"><i /> RAPID FORMAT</div><h3>{t.sprint}</h3><p>{t.sprintText}</p><ul>{t.sprintPoints.map((point) => <li key={point}>{point}</li>)}</ul><div className="best-for"><span>{t.bestFor}</span><strong>{t.sprintBest}</strong></div></div>
+            <div className="format-content"><div className="format-label"><i /> RAPID FORMAT</div><h3>{t.sprint}</h3><p>{t.sprintText}</p><ul>{t.sprintPoints.map((point) => <li key={point}>{point}</li>)}</ul><div className="best-for"><span>{t.bestFor}</span><strong>{t.sprintBest}</strong></div><a className="format-details" href={pagePath(language, "sprint")}>{language === "lv" ? "Iepazīt 24h sprintu" : "Explore the 24h Sprint"}</a></div>
           </article>
           <article className="format-card hackathon-card">
             <div className="format-number">48<span>h</span></div>
-            <div className="format-content"><div className="format-label"><i /> FULL FORMAT</div><h3>{t.hackathon}</h3><p>{t.hackathonText}</p><ul>{t.hackathonPoints.map((point) => <li key={point}>{point}</li>)}</ul><div className="best-for"><span>{t.bestFor}</span><strong>{t.hackathonBest}</strong></div></div>
+            <div className="format-content"><div className="format-label"><i /> FULL FORMAT</div><h3>{t.hackathon}</h3><p>{t.hackathonText}</p><ul>{t.hackathonPoints.map((point) => <li key={point}>{point}</li>)}</ul><div className="best-for"><span>{t.bestFor}</span><strong>{t.hackathonBest}</strong></div><a className="format-details" href={pagePath(language, "hackathon")}>{language === "lv" ? "Iepazīt 48h hakatonu" : "Explore the 48h Hackathon"}</a></div>
           </article>
         </div>
+        <p className="service-link"><a className="text-link" href={pagePath(language, "corporate")}>{language === "lv" ? "Hakatonu organizēšana: process, lomas un budžets" : "Hackathon organisation: process, roles and budget"}</a></p>
       </section>
 
       <section className="problem-section">
@@ -272,7 +274,7 @@ export default function LandingPage({ language }: { language: Language }) {
       <section className="included-section" id="outcomes">
         <div className="section-shell included-layout">
           <div className="object-board">
-            <img src="/48h-objects.webp" alt={t.objectsAlt} loading="lazy" />
+            <img src="/48h-objects.webp" alt={t.objectsAlt} width={1536} height={1024} loading="lazy" />
             <div className="object-label label-orange">IDEA / 07</div>
             <div className="object-label label-yellow">READY TO PITCH</div>
           </div>
@@ -308,6 +310,7 @@ export default function LandingPage({ language }: { language: Language }) {
             <p className="eyebrow">07 / {t.aboutEyebrow}</p>
             <h2>{t.aboutTitle}</h2>
             <p>{t.aboutText}</p>
+            <a className="about-details" href={pagePath(language, "about")}>{language === "lv" ? "Iepazīstiet Alekseju Masaiti un Ralfu Rogu" : "Meet Aleksejs Masaitis and Ralfs Roga"}</a>
           </div>
           <div className="big-proof">
             <span>50+</span>
@@ -351,7 +354,7 @@ export default function LandingPage({ language }: { language: Language }) {
       <footer className="site-footer">
         <div className="footer-brand">48<span>h</span></div>
         <p>{t.footerLine}</p>
-        <div className="footer-links"><a href="#formats">24h</a><a href="#formats">48h</a><a href="#top">↑ TOP</a></div>
+        <div className="footer-links"><a href={pagePath(language, "corporate")}>{pages[language].corporate.label}</a><a href={pagePath(language, "sprint")}>24h</a><a href={pagePath(language, "hackathon")}>48h</a><a href={pagePath(language, "about")}>{pages[language].about.label}</a></div>
       </footer>
     </main>
   );

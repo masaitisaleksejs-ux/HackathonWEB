@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://48h.lv";
+import { siteUrl } from "./site-content";
 
 export default function robots(): MetadataRoute.Robots {
   return {
