@@ -1,7 +1,7 @@
 export type Language = "en" | "lv";
 export type PageKey = "corporate" | "sprint" | "hackathon" | "about";
 
-export const siteUrl = "https://48h.lv";
+export const siteUrl = "https://www.48h.lv";
 export const bookingUrl = "https://cal.com/aleksejs-masaitis";
 export const pageKeys: PageKey[] = ["corporate", "sprint", "hackathon", "about"];
 

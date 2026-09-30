@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { default as worker } from "../dist/server/index.js";
 
-const origin = "https://48h.lv";
+const origin = "https://www.48h.lv";
 const routePairs = [
   ["/lv", "/en"],
   ["/lv/hakatonu-organizesana", "/en/corporate-hackathons"],

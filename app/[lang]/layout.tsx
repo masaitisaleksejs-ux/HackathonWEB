@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLanguage } from "../site-content";
+import { isLanguage, siteUrl } from "../site-content";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://48h.lv"),
+  metadataBase: new URL(siteUrl),
   applicationName: "48h",
   title: "48h — Corporate Hackathons in Latvia",
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://48h.lv/#organization",
+  "@id": `${siteUrl}/#organization`,
   name: "48h",
-  url: "https://48h.lv",
-  logo: "https://48h.lv/favicon.svg",
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
   description: "24h and 48h corporate hackathons for real business challenges in Latvia.",
   founder: [
     { "@type": "Person", name: "Aleksejs Masaitis" },
